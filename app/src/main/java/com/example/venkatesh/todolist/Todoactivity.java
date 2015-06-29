@@ -1,5 +1,6 @@
 package com.example.venkatesh.todolist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -68,10 +69,11 @@ public class Todoactivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                Intent intent = new Intent(Todoactivity.this, Date.class);
+                startActivity(intent);
 
             }
         });
-
     }
 
     public void readItems() {
