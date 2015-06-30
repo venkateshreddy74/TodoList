@@ -9,16 +9,18 @@
     tools:context="com.example.venkatesh.todolist.Date$PlaceholderFragment">
 
     <TextView
-        android:id="@+id/textview"
+        android:id="@+id/textviewtime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Reminder" />
+        android:text="SetTime" />
 
-    <DatePicker
-        android:id="@+id/datePicker"
+    <AnalogClock
+        android:id="@+id/analogClock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textview"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/textview"
+        android:layout_toRightOf="@+id/textviewtime" />
+
 
 </RelativeLayout>
