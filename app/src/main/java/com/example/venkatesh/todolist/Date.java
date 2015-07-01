@@ -17,7 +17,7 @@ public class Date extends ActionBarActivity implements DateandTimeFragmentCommun
         PlaceholderFragment placeholderfragment = new PlaceholderFragment(this);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, placeholderfragment)
                     .commit();
         }
     }

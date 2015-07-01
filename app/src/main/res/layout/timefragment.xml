@@ -14,11 +14,9 @@
         android:layout_height="wrap_content"
         android:text="SetTime" />
 
-    <AnalogClock
-        android:id="@+id/analogClock"
+    <TimePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/textview"
-        android:layout_toRightOf="@+id/textviewtime" />
+        android:layout_below="@+id/textviewtime"
+        android:layout_centerInParent="true" />
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.venkatesh.todolist;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ public class PlaceholderFragment extends Fragment {
 
     public PlaceholderFragment(DateandTimeFragmentCommunicator communicator) {
 
+        Log.i("PlaceHolder", "constructor called");
         this.communicator = communicator;
 
     }
@@ -38,6 +40,7 @@ public class PlaceholderFragment extends Fragment {
                 communicator.loadTimeFragment();
             }
         });
+
         return rootView;
     }
 
