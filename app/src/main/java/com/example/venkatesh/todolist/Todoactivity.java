@@ -132,7 +132,6 @@ public class Todoactivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     public void addItem(View v) {
         EditText itemtext = (EditText) findViewById(R.id.editText);
         itemadapter.add(itemtext.getText().toString());

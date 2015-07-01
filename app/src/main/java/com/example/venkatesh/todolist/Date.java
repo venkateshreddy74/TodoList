@@ -1,21 +1,20 @@
 package com.example.venkatesh.todolist;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+
+import com.example.venkatesh.todolist.interfaces.DateandTimeFragmentCommunicator;
 
 
-public class Date extends ActionBarActivity {
+public class Date extends ActionBarActivity implements DateandTimeFragmentCommunicator {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_date);
+        PlaceholderFragment placeholderfragment = new PlaceholderFragment(this);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
@@ -46,19 +45,14 @@ public class Date extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
 
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_date, container, false);
-            return rootView;
-        }
+    @Override
+    public void loadTimeFragment() {
+        TimeFragment timefragment = new TimeFragment();
+        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, timefragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
+
 }
