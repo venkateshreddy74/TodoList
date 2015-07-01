@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.venkatesh.todolist.interfaces.DateandTimeFragmentCommunicator;
 
@@ -14,6 +15,7 @@ import com.example.venkatesh.todolist.interfaces.DateandTimeFragmentCommunicator
 public class PlaceholderFragment extends Fragment {
 
     DateandTimeFragmentCommunicator communicator;
+    Button button;
 
     public PlaceholderFragment() {
     }
@@ -28,11 +30,15 @@ public class PlaceholderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_date, container, false);
+        button = (Button) rootView.findViewById(R.id.okbutton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                communicator.loadTimeFragment();
+            }
+        });
         return rootView;
     }
 
-    public void setDate(View v) {
-
-        communicator.loadTimeFragment();
-    }
 }
