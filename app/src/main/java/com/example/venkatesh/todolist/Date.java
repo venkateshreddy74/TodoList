@@ -14,10 +14,10 @@ public class Date extends ActionBarActivity implements DateandTimeFragmentCommun
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_date);
-        PlaceholderFragment placeholderfragment = new PlaceholderFragment(this);
+        DateFragment dateFragment = new DateFragment(this);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, placeholderfragment)
+                    .add(R.id.container, dateFragment)
                     .commit();
         }
     }
@@ -27,6 +27,7 @@ public class Date extends ActionBarActivity implements DateandTimeFragmentCommun
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_date, menu);
+
         return true;
     }
 

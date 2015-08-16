@@ -7,21 +7,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 
 import com.example.venkatesh.todolist.interfaces.DateandTimeFragmentCommunicator;
 
 /**
  * Created by Venkatesh on 6/30/2015.
  */
-public class PlaceholderFragment extends Fragment {
+public class DateFragment extends Fragment {
 
     DateandTimeFragmentCommunicator communicator;
+    DatePicker datePicker;
     Button button;
 
-    public PlaceholderFragment() {
+    public DateFragment() {
     }
 
-    public PlaceholderFragment(DateandTimeFragmentCommunicator communicator) {
+    public DateFragment(DateandTimeFragmentCommunicator communicator) {
 
         Log.i("PlaceHolder", "constructor called");
         this.communicator = communicator;
@@ -33,6 +35,7 @@ public class PlaceholderFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_date, container, false);
         button = (Button) rootView.findViewById(R.id.okbutton);
+        datePicker = (DatePicker) rootView.findViewById(R.id.datePicker);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +45,12 @@ public class PlaceholderFragment extends Fragment {
         });
 
         return rootView;
+    }
+
+    public void getDate() {
+
+        //  datePicker.getDayOfMonth();
+
     }
 
 }

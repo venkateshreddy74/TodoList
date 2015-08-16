@@ -12,11 +12,20 @@
         android:id="@+id/textviewtime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SetTime" />
+    android:text="SetTime"
+    android:textStyle="normal" />
 
     <TimePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textviewtime"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="ok" />
 </RelativeLayout>
