@@ -1,7 +1,9 @@
 package com.example.venkatesh.todolist;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -27,12 +29,14 @@ public class Todoactivity extends ActionBarActivity {
 
     ListView listView;
 
+    private SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todoactivity);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.todo_launch);
+       // getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //getSupportActionBar().setIcon(R.drawable.todo_launch);
 
 
         itemnames = new ArrayList<>();
@@ -48,6 +52,8 @@ public class Todoactivity extends ActionBarActivity {
         setupListViewListener();
 
         getSupportActionBar().setDisplayShowCustomEnabled(true);
+
+        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
 
 
     }
@@ -90,6 +96,7 @@ public class Todoactivity extends ActionBarActivity {
             itemnames = new ArrayList<>();
             e.printStackTrace();
         }
+
 
 
     }

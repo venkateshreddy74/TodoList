@@ -48,8 +48,9 @@ public class Date extends ActionBarActivity implements DateandTimeFragmentCommun
 
 
     @Override
-    public void loadTimeFragment() {
+    public void loadTimeFragment(Bundle bundle) {
         TimeFragment timefragment = new TimeFragment();
+        timefragment.setArguments(bundle);
         android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, timefragment);
         transaction.addToBackStack(null);

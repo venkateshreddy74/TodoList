@@ -34,22 +34,33 @@ public class DateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_date, container, false);
-        button = (Button) rootView.findViewById(R.id.okbutton);
+        button = (Button) rootView.findViewById(R.id.ok_button);
         datePicker = (DatePicker) rootView.findViewById(R.id.datePicker);
+        //saveDate();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                communicator.loadTimeFragment();
+                int day;
+                int month;
+                int year;
+                day= datePicker.getDayOfMonth();
+                year= datePicker.getYear();
+                month=datePicker.getMonth();
+                Bundle bundle = new Bundle();
+                bundle.putInt("day",day);
+                bundle.putInt("month",month);
+                bundle.putInt("year",year);
+                communicator.loadTimeFragment(bundle);
             }
         });
 
         return rootView;
     }
 
-    public void getDate() {
 
-        //  datePicker.getDayOfMonth();
+    public DatePicker getDate() {
+
+        return datePicker;
 
     }
 
