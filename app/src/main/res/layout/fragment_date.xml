@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.venkatesh.todolist.Date$PlaceholderFragment">
+    tools:context="com.example.venkatesh.todolist.Date$DateFragment">
 
     <TextView
         android:id="@+id/textview"
@@ -14,19 +14,20 @@
         android:layout_height="wrap_content"
         android:text="SetDate" />
 
-    <DatePicker
-        android:id="@+id/datePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textview"
-        android:layout_centerHorizontal="true" />
-
     <Button
-        android:id="@+id/okbutton"
+        android:id="@+id/ok_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="OK" />
 
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ok_button"
+        android:layout_below="@id/textview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
 </RelativeLayout>
